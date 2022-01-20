@@ -35,7 +35,10 @@ function almostEqualUlp(a, b, nulp) {
 
 export function checkValue(tensor, expected, nulp = 0n) {
   assert.isTrue(tensor.size === expected.length);
+  console.log('=============================');
   for (let i = 0; i < expected.length; ++i) {
+    // console.log(`${tensor.getValueByIndex(i)},`);
+    // assert.isTrue(true);
     assert.isTrue(almostEqualUlp(tensor.getValueByIndex(i), expected[i], nulp));
   }
 }
